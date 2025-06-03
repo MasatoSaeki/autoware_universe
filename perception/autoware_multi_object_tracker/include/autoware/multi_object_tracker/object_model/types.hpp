@@ -15,8 +15,6 @@
 #ifndef AUTOWARE__MULTI_OBJECT_TRACKER__OBJECT_MODEL__TYPES_HPP_
 #define AUTOWARE__MULTI_OBJECT_TRACKER__OBJECT_MODEL__TYPES_HPP_
 
-#include <rclcpp/rclcpp.hpp>
-
 #include <autoware_perception_msgs/msg/detected_object.hpp>
 #include <autoware_perception_msgs/msg/detected_object_kinematics.hpp>
 #include <autoware_perception_msgs/msg/detected_objects.hpp>
@@ -43,7 +41,6 @@ namespace types
 {
 // constants
 constexpr size_t max_channel_size = 16;
-constexpr float default_existence_probability = 0.75;
 
 // channel configuration
 struct InputChannel
@@ -76,9 +73,6 @@ struct ObjectKinematics
 
 struct DynamicObject
 {
-  // time
-  rclcpp::Time time;
-
   // identification
   unique_identifier_msgs::msg::UUID uuid = unique_identifier_msgs::msg::UUID();
 
